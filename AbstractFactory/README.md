@@ -37,5 +37,4 @@ Concrete factories implement the creation methods of the abstract factory. Each 
 ### Client Code
 The client code interacts with both factories and products via their respective abstract interfaces. This allows the client to work with any factory/product variant without being coupled to specific implementations.
 
-## Folder Structure
 
