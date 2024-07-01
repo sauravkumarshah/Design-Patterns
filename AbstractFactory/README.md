@@ -1,36 +1,41 @@
-The **Factory Method** pattern suggests that you replace direct object construction calls (using the new operator) with calls to a special factory method. Don’t worry: the objects are still created via the new operator, but it’s being called from within the factory method. Objects returned by a factory method are often referred to as products.
+# Abstract Factory Design Pattern
 
-**Subclasses** can alter the class of objects being returned by the factory method.At first glance, this change may look pointless: we just moved the constructor call from one part of the program to another. However, consider this: now you can override the factory method in a subclass and change the class of products being created by the method.There’s a slight limitation though: subclasses may return different types of products only if these products have a common base class or interface. Also, the factory method in the base class should have its return type declared as this interface.
+The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
-All products must follow the same interface.For example, both **Truck** and **Ship classes** should implement the **Transport interface**, which declares a method called **deliver**. 
+## Overview
 
-Each class implements this method differently: **trucks deliver cargo by land, ships deliver cargo by sea**.
+The Abstract Factory pattern suggests explicitly declaring interfaces for each distinct product of the product family (e.g., `Chair`, `Sofa`, `CoffeeTable`). All variants of products follow those interfaces. For example, all chair variants can implement the `Chair` interface; all coffee table variants can implement the `CoffeeTable` interface, and so on.
 
-**The factory method in the RoadLogistics class returns truck objects**, whereas **the factory method in the SeaLogistics class returns ships.** As long as all product classes implement a common interface, you can pass their objects to the client code without breaking it. The code that uses the factory method (often called the client code) doesn’t see a difference between the actual products returned by various subclasses. The client treats all the products as abstract Transport. The client knows that all transport objects are supposed to have the deliver method, but exactly how it works isn’t important to the client. 
+## Structure
 
-**The Product declares the interface, which is common to all objects that can be produced by the creator and its subclasses.** 
+### Product Interfaces
+The interfaces for the distinct products ensure that all product variants follow the same protocol.
 
-**Concrete Products are different implementations of the product interface.** The Creator class declares the factory method that returns new product objects. It’s important that the return type of this method matches the product interface.You can declare the factory method as abstract to force all subclasses to implement their own versions of the method. As an alternative, the base factory method can return some default product type. 
+- **Chair Interface**: Declares the `sitOn` method.
+- **Sofa Interface**: Declares the `lieOn` method.
+- **CoffeeTable Interface**: Declares the `placeItemsOn` method.
 
-Note, despite its name, product creation is not the primary responsibility of the creator. Usually, the creator class already has some core business logic related to products. The factory method helps to decouple this logic from the concrete product classes. 
+### Concrete Products
+The concrete product classes implement the product interfaces:
 
-Here is an analogy: a large software development company can have a training department for programmers. However, the primary function of the company as a whole is still writing code, not producing programmers. 
+- **VictorianChair**, **ModernChair**, **ArtDecoChair**: Implement the `Chair` interface.
+- **VictorianSofa**, **ModernSofa**, **ArtDecoSofa**: Implement the `Sofa` interface.
+- **VictorianCoffeeTable**, **ModernCoffeeTable**, **ArtDecoCoffeeTable**: Implement the `CoffeeTable` interface.
 
-**Concrete Creators override the base factory method so it returns a different type of product.** 
+### Abstract Factory
+The abstract factory interface declares methods for creating each of the abstract products:
 
-Note that the factory method doesn’t have to create new instances all the time. It can also return existing objects from a cache, an object pool, or another source.
+- **FurnitureFactory**: Declares methods `createChair`, `createSofa`, and `createCoffeeTable`.
 
-### Explanation
+### Concrete Factories
+Concrete factories implement the creation methods of the abstract factory. Each factory corresponds to a specific variant of products:
 
-1.  **Transport Interface**: Declares the deliver method which will be implemented by all concrete products.
-    
-2.  **Concrete Products (Truck and Ship)**: Implement the Transport interface and provide their own implementations of the deliver method.
-    
-3.  **Creator (Logistics)**: Declares the factory method createTransport. This method is abstract and must be implemented by subclasses. The planDelivery method uses the factory method to get a Transport object and then calls its deliver method.
-    
-4.  **Concrete Creators (RoadLogistics and SeaLogistics)**: Implement the factory method to return instances of Truck and Ship respectively.
-    
-5.  **Client Code**: Demonstrates how to use the Logistics class and its subclasses to plan deliveries. The client code is not concerned with the specific type of Transport being used.
-    
+- **VictorianFurnitureFactory**: Creates Victorian-style furniture.
+- **ModernFurnitureFactory**: Creates modern-style furniture.
+- **ArtDecoFurnitureFactory**: Creates Art Deco-style furniture.
 
-By using this pattern, you can easily extend the system to handle new types of transport without modifying the existing client code.
+### Client Code
+The client code interacts with both factories and products via their respective abstract interfaces. This allows the client to work with any factory/product variant without being coupled to specific implementations.
+
+## Folder Structure
+
