@@ -31,6 +31,7 @@ public class Singleton {
         return instance;
     }
 }
+```java
 
 ### Explanation
 
@@ -59,6 +60,8 @@ public class Singleton {
     }
 }
 
+```java
+
 ### Explanation
 
 ### **Eager Initialization:** The instance is created when the class is loaded, which avoids synchronization issues. However, it does not support lazy initialization and might be less efficient if the Singleton is not used.
@@ -85,6 +88,8 @@ public class Singleton {
         return Holder.INSTANCE;
     }
 }
+
+```java
 
 ### Explanation
 
