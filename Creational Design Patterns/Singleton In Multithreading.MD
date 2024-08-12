@@ -35,9 +35,9 @@ public class Singleton {
 
 ### Explanation
 
-**Volatile Keyword:** Ensures visibility of changes to the instance variable across threads.
-**Synchronized Block:** Ensures that only one thread can execute the instance creation code at a time.
-**Double-Check Locking:** Reduces the overhead of synchronization by checking the instance twice.
+#### **Volatile Keyword:** Ensures visibility of changes to the instance variable across threads.
+#### **Synchronized Block:** Ensures that only one thread can execute the instance creation code at a time.
+#### **Double-Check Locking:** Reduces the overhead of synchronization by checking the instance twice.
 
 ### 2. Eager Initialization
 
