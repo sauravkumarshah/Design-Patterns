@@ -31,7 +31,7 @@ public class Singleton {
         return instance;
     }
 }
-```java
+```
 
 ### Explanation
 
@@ -60,7 +60,7 @@ public class Singleton {
     }
 }
 
-```java
+```
 
 ### Explanation
 
@@ -89,7 +89,7 @@ public class Singleton {
     }
 }
 
-```java
+```
 
 ### Explanation
 
