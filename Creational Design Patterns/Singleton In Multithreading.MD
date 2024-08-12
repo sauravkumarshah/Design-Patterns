@@ -95,7 +95,7 @@ public class Singleton {
 
 **Static Inner Class:** The Holder class contains the Singleton instance and is only loaded when the getInstance() method is called. This ensures lazy initialization and thread-safety without requiring synchronization.
 
-#### 4. Double-Check Locking Without Volatile
+### 4. Double-Check Locking Without Volatile
 
 In older Java versions, implementations might use double-check locking without the volatile keyword. These implementations are not thread-safe and should be avoided.
 
