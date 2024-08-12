@@ -1,4 +1,4 @@
-package com.tipsontech.example.transport;
+package com.tipsontech.factory.transport;
 
 public interface Transport {
 	void deliver();

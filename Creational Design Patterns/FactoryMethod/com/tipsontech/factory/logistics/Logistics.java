@@ -1,6 +1,6 @@
-package com.tipsontech.example.logistics;
+package com.tipsontech.factory.logistics;
 
-import com.tipsontech.example.transport.Transport;
+import com.tipsontech.factory.transport.Transport;
 
 public abstract class Logistics {
 	

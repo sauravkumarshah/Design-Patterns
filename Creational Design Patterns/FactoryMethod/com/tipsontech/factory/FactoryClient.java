@@ -1,8 +1,8 @@
-package com.tipsontech.example;
+package com.tipsontech.factory;
 
-import com.tipsontech.example.logistics.Logistics;
-import com.tipsontech.example.logistics.RoadLogistics;
-import com.tipsontech.example.logistics.SeaLogistics;
+import com.tipsontech.factory.logistics.Logistics;
+import com.tipsontech.factory.logistics.RoadLogistics;
+import com.tipsontech.factory.logistics.SeaLogistics;
 
 public class FactoryClient {
     public static void main(String[] args) {

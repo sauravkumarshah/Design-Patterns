@@ -1,7 +1,7 @@
-package com.tipsontech.example.logistics;
+package com.tipsontech.factory.logistics;
 
-import com.tipsontech.example.transport.Transport;
-import com.tipsontech.example.transport.Truck;
+import com.tipsontech.factory.transport.Transport;
+import com.tipsontech.factory.transport.Truck;
 
 public class RoadLogistics extends Logistics {
     @Override
