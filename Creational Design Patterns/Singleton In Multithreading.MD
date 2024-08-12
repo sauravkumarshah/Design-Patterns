@@ -35,9 +35,9 @@ public class Singleton {
 
 ### Explanation
 
-#### **Volatile Keyword:** Ensures visibility of changes to the instance variable across threads.
-#### **Synchronized Block:** Ensures that only one thread can execute the instance creation code at a time.
-#### **Double-Check Locking:** Reduces the overhead of synchronization by checking the instance twice.
+1. **Volatile Keyword:** Ensures visibility of changes to the instance variable across threads.
+2. **Synchronized Block:** Ensures that only one thread can execute the instance creation code at a time.
+3. **Double-Check Locking:** Reduces the overhead of synchronization by checking the instance twice.
 
 ### 2. Eager Initialization
 
@@ -101,8 +101,8 @@ In older Java versions, implementations might use double-check locking without t
 
 ### Summary
 
-**Eager Initialization:** Simple and thread-safe, but does not support lazy initialization.
-**Lazy Initialization with Synchronization:** Supports lazy initialization but can be less efficient due to synchronization overhead.
-**Initialization-on-Demand Holder Idiom:** Thread-safe and supports lazy initialization without synchronization overhead.
+1. **Eager Initialization:** Simple and thread-safe, but does not support lazy initialization.
+2. **Lazy Initialization with Synchronization:** Supports lazy initialization but can be less efficient due to synchronization overhead.
+3. **Initialization-on-Demand Holder Idiom:** Thread-safe and supports lazy initialization without synchronization overhead.
 
 Each approach has its trade-offs. The Initialization-on-Demand Holder Idiom is generally recommended for its simplicity and efficiency in modern Java applications.
