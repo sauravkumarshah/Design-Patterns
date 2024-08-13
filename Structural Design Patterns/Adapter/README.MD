@@ -28,9 +28,3 @@ To solve this problem, we can use the Adapter design pattern. The `AdvancedPayAd
 
 # Conclusion
 The Adapter pattern is a powerful tool when you need to integrate classes with incompatible interfaces. In this example, the AdvancedPayAdapter enables the AdvancedPay third-party payment gateway to work seamlessly with the existing payment processing system. This approach enhances the flexibility and maintainability of the system, allowing new integrations without major code changes.
-
-### `PaymentProcessor.java`
-```java
-public interface PaymentProcessor {
-    void processPayment(double amount);
-}
