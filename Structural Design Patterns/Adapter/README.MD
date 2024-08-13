@@ -1,4 +1,4 @@
-# Adapter Design Pattern Example
+# Adapter Design Pattern
 
 ## Overview
 
