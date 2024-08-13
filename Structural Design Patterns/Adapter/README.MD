@@ -14,24 +14,6 @@ Imagine an e-commerce platform that needs to support multiple payment gateways s
 
 To solve this problem, we can use the Adapter design pattern. The `AdvancedPayAdapter` class acts as a bridge between the `AdvancedPay` third-party gateway and the existing `PaymentProcessor` interface, allowing the platform to interact with `AdvancedPay` as if it were a native payment processor.
 
-## Folder Structure
-
-src/
-└── main/
-└── java/
-└── com/
-└── ecommerce/
-├── adapters/
-│ └── AdvancedPayAdapter.java
-├── gateways/
-│ ├── PaymentProcessor.java
-│ ├── PayPalProcessor.java
-│ ├── StripeProcessor.java
-│ └── AdvancedPay.java
-└── platform/
-└── ECommercePlatform.java
-
-
 ### Explanation of the Folder Structure
 
 - **`adapters/AdvancedPayAdapter.java`**: Contains the adapter class that adapts the `AdvancedPay` gateway to the `PaymentProcessor` interface.
@@ -44,7 +26,8 @@ src/
 
 - **`platform/ECommercePlatform.java`**: Contains the main class that simulates the e-commerce platform's payment processing.
 
-## Code Explanation
+# Conclusion
+The Adapter pattern is a powerful tool when you need to integrate classes with incompatible interfaces. In this example, the AdvancedPayAdapter enables the AdvancedPay third-party payment gateway to work seamlessly with the existing payment processing system. This approach enhances the flexibility and maintainability of the system, allowing new integrations without major code changes.
 
 ### `PaymentProcessor.java`
 ```java
