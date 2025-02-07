@@ -1,5 +1,9 @@
 # Facade Design Pattern - Video Conversion System
 
+## Intent
+
+Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
+
 ## Problem Statement
 Imagine a scenario where an application needs to convert videos into different formats. However, video processing involves many complex steps, such as:
 - Reading the video file.
